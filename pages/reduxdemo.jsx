@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { startClock, serverRenderClock } from '../store';
+import { startClock, serverRenderClock } from '../src/actions/test';
 import Examples from '../src/components/Examples';
 
 // Next
