@@ -1,30 +1,42 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { startClock, serverRenderClock } from '../src/actions/test';
-import Examples from '../src/components/Examples';
 
-// Next
-import Link from '../src/Link';
-
+// Actions
+import {
+  serverRenderClock,
+  startClock
+} from '../src/actions/clock';
 
 // MUI
 import Button from '@material-ui/core/Button';
 
+// Components
+import Link from '../src/components/Common/Link';
+import Examples from '../src/components/Redux/Examples';
 
 class Index extends React.Component {
-  static getInitialProps({ reduxStore, req }) {
-    const isServer = !!req;
-    reduxStore.dispatch(serverRenderClock(isServer));
-    return {};
+
+  static getInitialProps(ctx) {
+    const { req, reduxStore } = ctx
+
+    // If req is populated, then it's serverside
+    // If req is empty, then it's clientside
+    const isServer = !!req
+
+    // Dispatch an action on the serverside render 
+    // This simply changes the background color of the clock to #000 to showcase the server render of the clock 
+    reduxStore.dispatch(serverRenderClock(isServer))
+
+    // Return no props 
+    return {}
   }
 
   componentDidMount() {
-    const { dispatch } = this.props;
-    this.timer = startClock(dispatch);
+    this.timer = this.props.startClock();
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer);
+    clearInterval(this.timer)
   }
 
   render() {
@@ -45,4 +57,10 @@ class Index extends React.Component {
   }
 }
 
-export default connect()(Index);
+const mapDispatchToProps = dispatch => ({
+  startClock: () => setInterval(() => {
+    dispatch(startClock(true))
+  }, 1000)
+});
+
+export default connect(null, mapDispatchToProps)(Index);

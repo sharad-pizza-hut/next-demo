@@ -10,8 +10,8 @@ import { connect } from 'react-redux'
 
 
 // Components
-import ProTip from '../src/ProTip';
-import Link from '../src/Link';
+import ProTip from '../src/components/Common/ProTip';
+import Link from '../src/components/Common/Link';
 
 function Copyright() {
   return (
