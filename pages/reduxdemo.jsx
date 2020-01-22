@@ -1,16 +1,18 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+
+// Actions
 import {
   serverRenderClock,
   startClock
-} from '../src/actions/test';
-import Examples from '../src/components/Examples';
-
-// Next
-import Link from '../src/Link';
+} from '../src/actions/clock';
 
 // MUI
 import Button from '@material-ui/core/Button';
+
+// Components
+import Link from '../src/components/Common/Link';
+import Examples from '../src/components/Redux/Examples';
 
 class Index extends React.Component {
 
@@ -30,7 +32,6 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
-    // Start Clock
     this.timer = this.props.startClock();
   }
 
@@ -56,14 +57,10 @@ class Index extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  example: state.example
-});
-
 const mapDispatchToProps = dispatch => ({
   startClock: () => setInterval(() => {
     dispatch(startClock(true))
   }, 1000)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connect(null, mapDispatchToProps)(Index);
