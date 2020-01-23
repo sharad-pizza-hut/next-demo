@@ -1,4 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+
+// SEO
+// import { NextSeo } from 'next-seo';
+import Head from 'next/head';
 
 // MUI Components
 import Button from '@material-ui/core/Button';
@@ -19,10 +23,16 @@ class Index extends React.Component {
   }
 
   render() {
-    
     return (
       <Container maxWidth="sm">
         <Box my={4}>
+          <Head>
+            <title>Redux</title>
+            <meta
+              name="description"
+              content="This is the components/Redux page. This is being set by the next/head component."
+            ></meta>
+          </Head>
           <Examples />
           <Button
             variant="contained"
