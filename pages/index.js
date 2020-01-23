@@ -1,7 +1,7 @@
 import React from 'react';
 
 // SEO
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 // MUI
 import Container from '@material-ui/core/Container';
@@ -20,13 +20,10 @@ const Index = () => {
   return (
     <Container maxWidth="sm">
       <Box my={4}>
-        <Head>
-          <title>Main</title>
-          <meta
-            name="description"
-            content="This is the index.js page. This is being set by the next/head component."
-          ></meta>
-        </Head>
+        <NextSeo
+            title="Main"
+            description="This is the index.js page. This is being set by the NextSEO component."
+          />
         <Typography variant="h4" component="h1" gutterBottom>
           Next.js example
         </Typography>

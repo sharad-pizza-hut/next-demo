@@ -2,6 +2,11 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 
+// SEO
+import { DefaultSeo } from 'next-seo';
+import SEO from '../src/next-seo.config';
+
+
 // MUI
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -25,9 +30,8 @@ class MyApp extends App {
 
     return (
       <React.Fragment>
-        
+          <DefaultSeo {...SEO} />
           <Head>
-            <title>Next Demo</title>
             <meta
               name="viewport"
               content="minimum-scale=1, initial-scale=1, width=device-width"
