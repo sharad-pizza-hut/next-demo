@@ -14,4 +14,9 @@ const mapDispatchToProps = dispatch => ({
     }, 1000)
 });
 
-export default connect(null, mapDispatchToProps)(ReduxExample);
+const mapStateToProps = state => ({
+  clock: state.clock,
+  counter: state.counter
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxExample);
