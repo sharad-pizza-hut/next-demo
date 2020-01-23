@@ -8,13 +8,14 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case TICK:
-      return Object.assign({}, state, {
+      return {
+        ...state, 
         lastUpdate: action.ts,
         light: !!action.light
-      });
+      };
     default:
       return state;
   }
-};
+};  
 
 export default reducer;
