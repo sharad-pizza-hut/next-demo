@@ -1,4 +1,4 @@
-// Test
+// Types
 export const TICK = 'TICK';
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';

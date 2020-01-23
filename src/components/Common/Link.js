@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React from 'react';
-import PropTypes from 'prop-types';
+import { string, object, oneOfType, bool, func } from 'prop-types'
+import React, { forwardRef } from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import MuiLink from '@material-ui/core/Link';
 
-const NextComposed = React.forwardRef(function NextComposed(props, ref) {
+const NextComposed = forwardRef(function NextComposed(props, ref) {
   const { as, href, prefetch, ...other } = props;
 
   return (
@@ -17,9 +17,9 @@ const NextComposed = React.forwardRef(function NextComposed(props, ref) {
 });
 
 NextComposed.propTypes = {
-  as: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  prefetch: PropTypes.bool,
+  as: oneOfType([string, object]),
+  href: oneOfType([string, object]),
+  prefetch: bool,
 };
 
 // A styled version of the Next.js Link component:
@@ -50,14 +50,14 @@ function Link(props) {
 }
 
 Link.propTypes = {
-  activeClassName: PropTypes.string,
-  as: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  className: PropTypes.string,
-  href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
-  naked: PropTypes.bool,
-  onClick: PropTypes.func,
-  prefetch: PropTypes.bool,
+  activeClassName: string,
+  as: oneOfType([string, object]),
+  className: string,
+  href: oneOfType([string, object]),
+  innerRef: oneOfType([func, object]),
+  naked: bool,
+  onClick: func,
+  prefetch: bool,
 };
 
-export default React.forwardRef((props, ref) => <Link {...props} innerRef={ref} />);
+export default forwardRef((props, ref) => <Link {...props} innerRef={ref} />);
