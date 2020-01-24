@@ -1,4 +1,4 @@
-import {TICK} from "../types"
+import { TICK } from "../types"
 
 export const serverRenderClock = (isServer) => {
     return { type: TICK, light: !isServer, ts: Date.now() }

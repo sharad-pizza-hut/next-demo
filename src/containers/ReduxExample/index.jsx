@@ -6,7 +6,6 @@ import { startClock } from '../../actions/clock';
 // Component
 import ReduxExample from "../../components/Redux"
 
-
 const mapDispatchToProps = dispatch => ({
   startClock: () =>
     setInterval(() => {

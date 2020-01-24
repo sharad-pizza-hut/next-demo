@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 
@@ -17,6 +17,7 @@ import withReduxStore from '../lib/with-redux-store';
 import { Provider } from 'react-redux';
 
 class MyApp extends App {
+
   componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -29,7 +30,7 @@ class MyApp extends App {
     const { Component, pageProps, reduxStore } = this.props;
 
     return (
-      <React.Fragment>
+      <Fragment>
           <DefaultSeo {...SEO} />
           <Head>
             <meta
@@ -42,12 +43,11 @@ class MyApp extends App {
             <CssBaseline />
             <Provider store={reduxStore}>
             <Component {...pageProps} />
-            </Provider>
-          </ThemeProvider>
-      </React.Fragment>
+          </Provider>
+        </ThemeProvider>
+      </Fragment>
     );
   }
 }
-
 
 export default withReduxStore(MyApp)
