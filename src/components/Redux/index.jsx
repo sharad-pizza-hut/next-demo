@@ -1,4 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+
+// SEO
+import { NextSeo } from 'next-seo';
 
 // MUI Components
 import Button from '@material-ui/core/Button';
@@ -19,10 +22,13 @@ class Index extends React.Component {
   }
 
   render() {
-    
     return (
       <Container maxWidth="sm">
         <Box my={4}>
+          <NextSeo
+            title="Redux"
+            description="AThis is the components/Redux page. This is being set by the NextSeo component."
+          />
           <Examples />
           <Button
             variant="contained"

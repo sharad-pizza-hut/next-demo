@@ -6,6 +6,7 @@
     "@material-ui/core": "latest",
     "clsx": "latest",
     "next": "latest",
+    "next-seo": "^3.4.0",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
