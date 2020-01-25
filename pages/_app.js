@@ -6,7 +6,6 @@ import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../src/next-seo.config';
 
-
 // MUI
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -31,17 +30,17 @@ class MyApp extends App {
 
     return (
       <Fragment>
-          <DefaultSeo {...SEO} />
-          <Head>
-            <meta
-              name="viewport"
-              content="minimum-scale=1, initial-scale=1, width=device-width"
-            />
-          </Head>
-          <ThemeProvider theme={theme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            <Provider store={reduxStore}>
+        <DefaultSeo {...SEO} />
+        <Head>
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width"
+          />
+        </Head>
+        <ThemeProvider theme={theme}>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Provider store={reduxStore}>
             <Component {...pageProps} />
           </Provider>
         </ThemeProvider>
