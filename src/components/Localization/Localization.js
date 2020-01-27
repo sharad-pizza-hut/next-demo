@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-    Card, 
-    CardHeader, 
-    CardContent, 
-    Typography, 
-    Icon, 
-    IconButton, 
-    GridList, 
+import {
+    Card,
+    CardHeader,
+    CardContent,
+    Typography,
+    Icon,
+    IconButton,
+    GridList,
     GridListTile,
     TextField,
     Button,
@@ -26,7 +26,13 @@ const withStyles = makeStyles(theme => ({
     },
     dealsButton: {
         backgroundColor: theme.palette.pizzaHutRed.main,
-        color: theme.palette.background.default
+        color: theme.palette.background.default,
+    },
+    iconBtn: {
+        borderRadius: 0,
+        '&:hover': {
+            background: "none",
+        }
     }
 }));
 
@@ -35,7 +41,7 @@ export default function Localization() {
 
     return (
         <Card raised>
-            <CardHeader 
+            <CardHeader
                 title={
                     <Typography variant="h4">
                         Start Here
@@ -45,13 +51,13 @@ export default function Localization() {
                     <Icon>
                         <img src={localization} className={classes.iconImg} />
                     </Icon>
-                } 
-                subheader="Find your store to see local deals" 
+                }
+                subheader="Find your store to see local deals"
             />
             <CardContent>
                 <GridList cellHeight={50} cols={2}>
                     <GridListTile>
-                        <IconButton variant="outlined">
+                        <IconButton variant="outlined" className={classes.iconBtn}>
                             <img src={delivery} className={classes.iconImg} />
                             <Typography variant="subtitle2">
                                 DELIVERY
@@ -59,7 +65,7 @@ export default function Localization() {
                         </IconButton>
                     </GridListTile>
                     <GridListTile>
-                        <IconButton variant="outlined">
+                        <IconButton variant="outlined" className={classes.iconBtn}>
                             <img src={carryout} className={classes.iconImg} />
                             <Typography variant="subtitle2">
                                 CARRYOUT
