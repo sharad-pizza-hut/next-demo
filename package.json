@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "clsx": "latest",
+    "express": "^4.17.1",
     "next": "latest",
     "next-seo": "^3.4.0",
     "prop-types": "latest",

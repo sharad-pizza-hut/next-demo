@@ -31,7 +31,6 @@ class MyApp extends App {
 
     return (
       <Fragment>
-          <DefaultSeo {...SEO} />
           <Head>
             <meta
               name="viewport"
