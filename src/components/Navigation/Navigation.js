@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -7,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Link from '../Common/Link';
 import Logo from '../../assets/images/pizza-hut-logo.svg';
+
+// Actions
+import { activeClass } from '../../actions/active'
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -17,9 +21,11 @@ const useStyles = makeStyles(theme => ({
 	},
 	title: {
 		flexGrow: 1,
+		cursor: "pointer",
 	},
 	titleFirst: {
-		paddingRight: 10
+		paddingRight: 10,
+		cursor: "pointer",
 	},
 	header: {
 		backgroundColor: theme.palette.background.default,
@@ -74,28 +80,23 @@ const Nav = ({ list, className, activeTab, onClick, activeClass }) => {
 			<div>No Data</div>
 		);
 };
-
-export default function Navigation({ href, children }) {
-
-	console.log({href, children })
+export default function Navigation() {
 	const classes = useStyles();
 	const [items, setlist] = useState([]);
-	const [activeTab, setactiveTab] = useState();
+
+	const active = useSelector(state => state.active.active)
+	const dispatch = useDispatch()
 
 	useEffect(() => {
 		setlist(navLinks)
 	}, []);
-
-	const clickHander = ({ currentTarget: id }) => {
-		setactiveTab(~~id.id)
-	};
 
 	return (
 		<div className={classes.root}>
 			<AppBar position="static" className={classes.header}>
 				<Toolbar>
 					<DefaultLogo />
-					<Nav list={items} activeClass={classes.active} activeTab={activeTab} className={classes} onClick={clickHander} />
+					<Nav list={items} activeClass={classes.active} activeTab={active} className={classes} onClick={e => dispatch(activeClass(e.currentTarget))} />
 					<Button color="inherit">Login</Button>
 				</Toolbar>
 			</AppBar>
