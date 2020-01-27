@@ -1,7 +1,7 @@
 import { ACTIVE } from '../../actions/types';
 
 const initialState = {
-	active: 0
+	active: null
 };
 
 export const reducer = (state = initialState, action) => {
