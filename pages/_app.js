@@ -7,7 +7,6 @@ import Head from 'next/head';
 // import { DefaultSeo } from 'next-seo';
 // import SEO from '../src/next-seo.config';
 
-
 // MUI
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -29,7 +28,6 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, reduxStore } = this.props;
-
     return (
       <Fragment>
           <Head>
