@@ -1,3 +1,8 @@
+// Example redirect to external website
+// Web crawlers will see static HTML with any custom SEO injected in this page. 
+// Users will be redirected to an external site on page load. 
+// Reading: https://spectrum.chat/next-js/general/force-redirect-to-an-external-url-from-client~4fccd220-1549-453d-ab3c-855b7c79486d
+
 import React, {useEffect} from 'react'
 
 // MUI
