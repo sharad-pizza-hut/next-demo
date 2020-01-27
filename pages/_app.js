@@ -3,8 +3,9 @@ import App from 'next/app';
 import Head from 'next/head';
 
 // SEO
-import { DefaultSeo } from 'next-seo';
-import SEO from '../src/next-seo.config';
+// Not using DefaultSEO
+// import { DefaultSeo } from 'next-seo';
+// import SEO from '../src/next-seo.config';
 
 
 // MUI
