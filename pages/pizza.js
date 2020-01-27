@@ -11,8 +11,6 @@ const Pizza = () => {
     return (
         <div>
         <NextSeo title="Pizza Hut | Pizza" description="Pizza Hut | Pizza" />
-        <p>poo</p>
-
         </div>
     )
 }

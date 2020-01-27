@@ -1,4 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
+
+// Example of easy ActiveLink implementation using Next Router: https://flaviocopes.com/nextjs-active-link/
+
 import { string, object, oneOfType, bool, func } from 'prop-types'
 import React, { forwardRef } from 'react';
 import clsx from 'clsx';
