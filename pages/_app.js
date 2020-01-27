@@ -3,8 +3,9 @@ import App from 'next/app';
 import Head from 'next/head';
 
 // SEO
-import { DefaultSeo } from 'next-seo';
-import SEO from '../src/next-seo.config';
+// Not using DefaultSEO
+// import { DefaultSeo } from 'next-seo';
+// import SEO from '../src/next-seo.config';
 
 // MUI
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -27,20 +28,18 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, reduxStore } = this.props;
-
     return (
       <Fragment>
-        <DefaultSeo {...SEO} />
-        <Head>
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width"
-          />
-        </Head>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline />
-          <Provider store={reduxStore}>
+          <Head>
+            <meta
+              name="viewport"
+              content="minimum-scale=1, initial-scale=1, width=device-width"
+            />
+          </Head>
+          <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <Provider store={reduxStore}>
             <Component {...pageProps} />
           </Provider>
         </ThemeProvider>
