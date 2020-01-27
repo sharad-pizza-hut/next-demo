@@ -57,7 +57,7 @@ const Items = ({ text, id, activeTab, url, onClick, className, activeClass }) =>
 			onClick={onClick}
 			id={id}
 			className={activeTab === id ? `${className} ${activeClass}` : className}>
-			<Link href={`demo/${url}`} style={{ color: "red" }} >
+			<Link href={`demo/${url}`} style={{ color: "black" }} >
 				{text}
 			</Link >
 		</Typography>
