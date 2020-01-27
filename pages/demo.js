@@ -2,16 +2,16 @@ import React from 'react';
 
 // MUI
 import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
 
 // SEO
 import { NextSeo } from 'next-seo';
 
 // Components
-import ProTip from '../src/components/Common/ProTip';
-import Copyright from '../src/components/Common/Copyright';
 import Navigation from "../src/components/Navigation/Navigation";
+import Hero from '../src/components/Hero/Hero';
+import Localization from '../src/components/Localization/Localization';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -31,8 +31,16 @@ export default function Demo() {
 				description="This is the demo.js page. This is being set by the NextSEO component."
 			/>
 			<Navigation />
-			<ProTip />
-			<Copyright />
+			<Grid container spacing={2}>
+				<Grid item xs={4}>
+					<Localization />
+				</Grid>
+				<Grid item xs={8}>
+					<Hero />
+				</Grid>
+
+			</Grid>
+			
 		</Container>
 	);
 }
