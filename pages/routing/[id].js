@@ -1,6 +1,6 @@
-// Catchall route. 
-// Next.js will try to match [id].js first before falling back to this.
-// More reading: https://nextjs.org/blog/next-9-2#catch-all-dynamic-routes
+// Dynamic route with one query parameter `id`
+// Next.js will try to match [id].js and pass the `id` parameter to the component.
+// More reading: https://nextjs.org/docs/routing/dynamic-routes
 
 import React from 'react';
 
@@ -16,20 +16,19 @@ import { NextSeo } from 'next-seo';
 // Components
 import Link from '../../src/components/Common/Link';
 
-export default function Slug({slug}) {
-  const renderedSlug = slug.join('/')
-  return (
+export default function ID({id}) {
+    return (
     <Container maxWidth="sm">
       <Box my={4}>
         <NextSeo
-          title={`routing/${renderedSlug}`}
-          description="This is the [...slug].js page. This is being set by the NextSEO component."
+          title={`routing/id/${id}`}
+          description="This is the [id].js page. This is being set by the NextSEO component."
         />
         <Typography variant="h4" component="h1" gutterBottom>
-          Catchall 
+          ID 
         </Typography>
         <Typography variant="h4" component="h2" gutterBottom>
-        routing/{renderedSlug}
+        routing/id/{id}
         </Typography>
         <Button
           variant="contained"
@@ -45,7 +44,7 @@ export default function Slug({slug}) {
   );
 }
 
-Slug.getInitialProps = ({query}) => {
-    const { slug } = query
-    return {slug}
+ID.getInitialProps = ({query}) => {
+    const { id } = query
+    return {id}
 }

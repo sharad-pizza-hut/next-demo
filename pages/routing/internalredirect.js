@@ -1,24 +1,26 @@
-import React from 'react'
+// Example internal redirect 
+// This is a server-side internal redirect
+
+
+import React from 'react';
 
 const Redirect = () => {
-    return (
-        <div>
-            <p> routing/redirect </p>
-        </div>
-    )
-}
-
+  return (
+    <div>
+      <p> routing/redirect </p>
+    </div>
+  );
+};
 
 Redirect.getInitialProps = ({ res }) => {
+  if (res) {
+    res.writeHead(301, {
+      Location: '/routing/a'
+    });
+    res.end();
+  }
 
-    if (res) {
-      res.writeHead(301, {
-        Location: '/routing/a'
-      });
-      res.end();
-    }
-  
-    return {};
-  };
+  return {};
+};
 
 export default Redirect;
