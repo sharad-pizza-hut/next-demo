@@ -3,6 +3,7 @@
 // More reading: https://nextjs.org/docs/routing/dynamic-routes
 
 import React from 'react';
+import { useRouter } from 'next/router'
 
 // MUI
 import Container from '@material-ui/core/Container';
@@ -17,6 +18,7 @@ import { NextSeo } from 'next-seo';
 import Link from '../../src/components/Common/Link';
 
 export default function ID({id}) {
+    const router = useRouter()
     return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -28,7 +30,7 @@ export default function ID({id}) {
           ID 
         </Typography>
         <Typography variant="h4" component="h2" gutterBottom>
-        routing/id/{id}
+        routing/id/{router.query.id}
         </Typography>
         <Button
           variant="contained"
@@ -44,7 +46,3 @@ export default function ID({id}) {
   );
 }
 
-ID.getInitialProps = ({query}) => {
-    const { id } = query
-    return {id}
-}

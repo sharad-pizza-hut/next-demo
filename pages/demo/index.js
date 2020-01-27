@@ -9,9 +9,10 @@ import { Grid } from '@material-ui/core';
 import { NextSeo } from 'next-seo';
 
 // Components
-import Navigation from "../src/components/Navigation/Navigation";
-import Hero from '../src/components/Hero/Hero';
-import Localization from '../src/components/Localization/Localization';
+
+import Navigation from "../../src/components/Navigation/Navigation";
+import Hero from '../../src/components/Hero/Hero';
+import Localization from '../../src/components/Localization/Localization';
 
 const useStyles = makeStyles(theme => ({
 	root: {

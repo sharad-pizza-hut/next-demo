@@ -1,7 +1,5 @@
 // Example internal redirect 
 // This is a server-side internal redirect
-
-
 import React from 'react';
 
 const Redirect = () => {

@@ -35,8 +35,12 @@ const Index = () => {
           Go to the demo ui page
         </Link>
         <br />
-        <Link href="/reduxdemo" color="secondary">
+        <Link href="/redux" color="secondary">
           Go to the Redux page
+        </Link>
+        <br />
+        <Link href="/routing" color="secondary">
+          Go to the Routing page
         </Link>
         <ProTip />
         <Copyright />

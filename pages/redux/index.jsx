@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 // Actions
-import { serverRenderClock } from '../src/actions/clock'
+import { serverRenderClock } from '../../src/actions/clock'
 
 // Containers
-import ReduxExample from '../src/containers/ReduxExample';
+import ReduxExample from '../../src/containers/ReduxExample';
 
 class Index extends Component {
   /***
