@@ -58,7 +58,7 @@ const Routing = () => {
               Internal Redirect to /a
             </Typography>
           </Link>
-          <Link href="/routing/internalredirect" color="secondary">
+          <Link href="/routing/externalredirect" color="secondary">
             <Typography variant="h5" component="h3" gutterBottom>
               External Redirect to google.
             </Typography>
