@@ -13,9 +13,6 @@ import {
     Container
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import localization from '../../assets/images/localization_icon.png';
-import delivery from '../../assets/images/delivery_icon.png';
-import carryout from '../../assets/images/carryout_icon.png';
 
 const withStyles = makeStyles(theme => ({
     iconImg: {
@@ -49,7 +46,7 @@ export default function Localization() {
                 }
                 avatar={
                     <Icon>
-                        <img src={localization} className={classes.iconImg} />
+                        <img src="/images/localization_icon.png" className={classes.iconImg} />
                     </Icon>
                 }
                 subheader="Find your store to see local deals"
@@ -58,7 +55,7 @@ export default function Localization() {
                 <GridList cellHeight={50} cols={2}>
                     <GridListTile>
                         <IconButton variant="outlined" className={classes.iconBtn}>
-                            <img src={delivery} className={classes.iconImg} />
+                            <img src="/images/delivery_icon.png" className={classes.iconImg} />
                             <Typography variant="subtitle2">
                                 DELIVERY
                             </Typography>
@@ -66,7 +63,7 @@ export default function Localization() {
                     </GridListTile>
                     <GridListTile>
                         <IconButton variant="outlined" className={classes.iconBtn}>
-                            <img src={carryout} className={classes.iconImg} />
+                            <img src="/images/carryout_icon.png" className={classes.iconImg} />
                             <Typography variant="subtitle2">
                                 CARRYOUT
                             </Typography>
