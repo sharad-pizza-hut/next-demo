@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+
+// SEO
+import { NextSeo } from 'next-seo';
 
 // Actions
-import { serverRenderClock } from '../../src/actions/clock'
+import { serverRenderClock } from '../../src/actions/clock';
 
 // Containers
 import ReduxExample from '../../src/containers/ReduxExample';
@@ -15,18 +18,26 @@ class Index extends Component {
     but begins updating every second once the client side renders.
   ***/
   static getInitialProps({ reduxStore, req }) {
-    const isServer = !!req
+    const isServer = !!req;
 
     // Force dispatch a redux action on the server-side render
     // This action just updates the store with the current time to display on the clock.
     // If you comment this out, the clock would just show 00:00:00 until the client render updates the time (the next second).
-    reduxStore.dispatch(serverRenderClock(isServer))
-    return {}
+    reduxStore.dispatch(serverRenderClock(isServer));
+    return {};
   }
 
   // Renders a container
   render() {
-    return <ReduxExample />;
+    return (
+      <Fragment>
+        <NextSeo
+          title="Next Demo | Redux"
+          description="Next Demo | Redux | NextSEO"
+        />
+        <ReduxExample />
+      </Fragment>
+    );
   }
 }
 

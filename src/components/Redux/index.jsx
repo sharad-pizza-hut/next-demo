@@ -1,8 +1,5 @@
 import React from 'react';
 
-// SEO
-import { NextSeo } from 'next-seo';
-
 // MUI Components
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
@@ -25,10 +22,6 @@ class Index extends React.Component {
     return (
       <Container maxWidth="sm">
         <Box my={4}>
-          <NextSeo
-            title="Redux"
-            description="AThis is the components/Redux page. This is being set by the NextSeo component."
-          />
           <Examples />
           <br />
           <Button

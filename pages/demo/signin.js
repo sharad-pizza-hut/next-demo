@@ -11,7 +11,7 @@ const Deals = () => {
     });
     return (
         <Fragment>
-            <NextSeo title="Pizza Hut | Rewards" description="Pizza Hut | Rewards | NextSEO" />
+            <NextSeo title="Pizza Hut | Rewards" description="Pizza Hut | SignIn | NextSEO" />
         </Fragment>
     )
 }

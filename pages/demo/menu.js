@@ -10,7 +10,7 @@ const Pizza = () => {
     });
     return (
         <Fragment>
-            <NextSeo title="Pizza Hut | Pizza" description="Pizza Hut | Pizza" />
+            <NextSeo title="Pizza Hut | Menu" description="Pizza Hut | Menu | NextSEO" />
         </Fragment>
     )
 }
