@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,6 +11,8 @@ import Logo from '../../assets/images/pizza-hut-logo.svg';
 
 // Actions
 import { activeClass } from '../../actions/active'
+import { fetchData } from '../../actions/fetch'
+
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -85,13 +87,12 @@ const Nav = ({ list, className, activeTab, onClick, activeClass }) => {
 };
 export default function Navigation() {
 	const classes = useStyles();
-	const [items, setlist] = useState([]);
-
 	const active = useSelector(state => state.active.active)
+	const fetch = useSelector(state => state.fetch.fetch)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		setlist(navLinks)
+		dispatch(fetchData(navLinks))
 	}, []);
 
 	return (
@@ -99,7 +100,7 @@ export default function Navigation() {
 			<AppBar position="static" className={classes.header}>
 				<Toolbar>
 					<DefaultLogo />
-					<Nav list={items} activeClass={classes.active} activeTab={active} className={classes} onClick={e => dispatch(activeClass(e.currentTarget))} />
+					<Nav list={fetch} activeClass={classes.active} activeTab={active} className={classes} onClick={e => dispatch(activeClass(e.currentTarget))} />
 					<Button color="inherit">Login</Button>
 				</Toolbar>
 			</AppBar>
