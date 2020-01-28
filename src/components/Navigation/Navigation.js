@@ -41,11 +41,6 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-const navLinks = [
-	{ route: 'deals', text: 'Deals' },
-	{ route: 'menu', text: 'Menu' }
-];
-
 const DefaultLogo = () => (
 	<Link href="/" color="secondary">
 		<Logo />
@@ -67,7 +62,7 @@ const Items = ({ text, id, activeTab, url, onClick, className, activeClass }) =>
 };
 
 const Nav = ({ list, className, activeTab, onClick, activeClass }) => {
-	const lastIndex = navLinks.length - 1;
+	const lastIndex = list.length - 1;
 	return list ? (
 		list.map((item, index) => (
 			<Items
@@ -92,7 +87,7 @@ export default function Navigation() {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		dispatch(fetchData(navLinks))
+		dispatch(fetchData())
 	}, []);
 
 	return (
