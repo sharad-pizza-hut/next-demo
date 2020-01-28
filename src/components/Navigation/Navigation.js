@@ -7,7 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Link from '../Common/Link';
-import Logo from '../../assets/images/pizza-hut-logo.svg';
+import Logo from '../../../public/images/pizza-hut-logo.svg';
 
 // Actions
 import { activeClass } from '../../actions/active'
