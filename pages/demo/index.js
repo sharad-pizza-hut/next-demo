@@ -3,13 +3,12 @@ import React from 'react';
 // MUI
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 // SEO
 import { NextSeo } from 'next-seo';
 
 // Components
-
 import Navigation from "../../src/components/Navigation/Navigation";
 import Hero from '../../src/components/Hero/Hero';
 import Localization from '../../src/components/Localization/Localization';
@@ -25,6 +24,14 @@ const useStyles = makeStyles(theme => ({
 
 export default function Demo() {
 	const classes = useStyles();
+
+	const gridContainer = {
+		display: "flex",
+		justifyContent: "center",
+		m: 1,
+		p: 1
+	}
+
 	return (
 		<Container className={classes.root} >
 			<NextSeo
@@ -32,16 +39,14 @@ export default function Demo() {
 				description="This is the demo.js page. This is being set by the NextSEO component."
 			/>
 			<Navigation />
-			<Grid container spacing={2}>
-				<Grid item xs={4}>
+			<Box {...gridContainer}>
+				<Box p={1}>
 					<Localization />
-				</Grid>
-				<Grid item xs={8}>
+				</Box>
+				<Box p={1}>
 					<Hero />
-				</Grid>
-
-			</Grid>
-			
+				</Box>
+			</Box>
 		</Container>
 	);
 }

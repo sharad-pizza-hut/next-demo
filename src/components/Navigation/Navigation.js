@@ -40,8 +40,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const navLinks = [
-	{ route: '/deals', text: 'Deals' },
-	{ route: '/menu', text: 'Menu' }
+	{ route: 'deals', text: 'Deals' },
+	{ route: 'menu', text: 'Menu' }
 ];
 
 const DefaultLogo = () => (
@@ -50,14 +50,16 @@ const DefaultLogo = () => (
 	</Link>
 );
 
-const Items = ({ text, id, activeTab, onClick, className, activeClass }) => {
+const Items = ({ text, id, activeTab, url, onClick, className, activeClass }) => {
 	return (
 		<Typography
 			variant="h6"
 			onClick={onClick}
 			id={id}
 			className={activeTab === id ? `${className} ${activeClass}` : className}>
-			{text}
+			<Link href={`demo/${url}`} style={{ color: "black" }} >
+				{text}
+			</Link >
 		</Typography>
 	);
 };
@@ -74,6 +76,7 @@ const Nav = ({ list, className, activeTab, onClick, activeClass }) => {
 				id={index}
 				onClick={onClick}
 				activeTab={activeTab}
+				url={item.route}
 			/>
 		))
 	) : (
