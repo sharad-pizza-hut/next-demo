@@ -24,23 +24,26 @@ const Index = () => {
           title="Main"
           description="This is the index.js page. This is being set by the NextSEO component."
         />
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h2" component="h1" gutterBottom>
           Next.js example
         </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
         <br />
         <Link href="/demo" color="secondary">
-          Go to the demo ui page
+        <Typography variant="h4" component="h1" gutterBottom>
+          Demo UI
+        </Typography>
         </Link>
         <br />
         <Link href="/redux" color="secondary">
-          Go to the Redux page
+        <Typography variant="h4" component="h1" gutterBottom>
+          Redux Example
+        </Typography>
         </Link>
         <br />
         <Link href="/routing" color="secondary">
-          Go to the Routing page
+        <Typography variant="h4" component="h1" gutterBottom>
+          Routing Examples
+        </Typography>
         </Link>
         <ProTip />
         <Copyright />
