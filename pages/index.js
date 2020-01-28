@@ -45,6 +45,12 @@ const Index = () => {
           Routing Examples
         </Typography>
         </Link>
+        <br />
+        <Link href="/api-example" color="secondary">
+        <Typography variant="h4" component="h1" gutterBottom>
+          API Examples
+        </Typography>
+        </Link>
         <ProTip />
         <Copyright />
       </Box>
