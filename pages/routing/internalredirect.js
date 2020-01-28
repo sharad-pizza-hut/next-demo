@@ -5,7 +5,7 @@ import React from 'react';
 const Redirect = () => {
   return (
     <div>
-      <p> routing/redirect </p>
+     
     </div>
   );
 };
@@ -18,7 +18,7 @@ Redirect.getInitialProps = ({ res }) => {
     res.end();
   }
 
-  return {};
+  return {foo:"bar"};
 };
 
 export default Redirect;

@@ -3,7 +3,7 @@
 // More reading: https://nextjs.org/docs/routing/dynamic-routes
 
 import React from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 // MUI
 import Container from '@material-ui/core/Container';
@@ -17,32 +17,33 @@ import { NextSeo } from 'next-seo';
 // Components
 import Link from '../../src/components/Common/Link';
 
-export default function ID({id}) {
-    const router = useRouter()
-    return (
+export default function ID({ id }) {
+  const router = useRouter();
+  return (
     <Container maxWidth="sm">
       <Box my={4}>
         <NextSeo
           title={`routing/id/${id}`}
           description="This is the [id].js page. This is being set by the NextSEO component."
         />
-        <Typography variant="h4" component="h1" gutterBottom>
-          ID 
-        </Typography>
         <Typography variant="h4" component="h2" gutterBottom>
-        routing/id/{router.query.id}
+          routing/[:id]
         </Typography>
+        <br/>
+        <Typography variant="h4" component="h2" gutterBottom>
+          id = <code> {router.query.id} </code>
+        </Typography>
+        <br/>
         <Button
           variant="contained"
           color="primary"
           component={Link}
           naked
-          href="/"
+          href="/routing"
         >
-          Go to the main page
+          Go back
         </Button>
       </Box>
     </Container>
   );
 }
-
