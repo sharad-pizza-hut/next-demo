@@ -30,6 +30,7 @@ class Index extends React.Component {
             description="AThis is the components/Redux page. This is being set by the NextSeo component."
           />
           <Examples />
+          <br />
           <Button
             variant="contained"
             color="primary"

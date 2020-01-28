@@ -24,6 +24,7 @@ class Index extends Component {
     return {}
   }
 
+  // Renders a container
   render() {
     return <ReduxExample />;
   }
