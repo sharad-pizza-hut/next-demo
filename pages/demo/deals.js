@@ -27,9 +27,9 @@ const Deals = ({ seo_image }) => {
   );
 };
 
-Deals.getInitialProps = ctx => {
+Deals.getInitialProps = () => {
   const getURL = () =>
-    'https://www.pizzahut.com/assets/w/images/homepage_deal/PH_Local+Deal_Sidekick_730x320.jpg';
+    'https://www.pizzahut.com/assets/w/images/homepage_hero/Superbowl10ML_MBTB_2301x927.jpg';
   const seo_image = getURL();
   return { seo_image };
 };
