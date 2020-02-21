@@ -43,7 +43,7 @@ const Routing = () => {
               Normal Route: /a
             </Typography>
           </Link>
-          <Link href="/routing/foo" color="secondary">
+          <Link href="/routing/1" color="secondary">
             <Typography variant="h5" component="h3" gutterBottom>
               Dynamic Route /[:id]
             </Typography>
