@@ -6,7 +6,7 @@
     "@material-ui/core": "latest",
     "axios": "^0.19.2",
     "clsx": "latest",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "next": "latest",
     "next-seo": "^3.4.0",
     "prop-types": "latest",
